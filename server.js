@@ -13,7 +13,10 @@ app.use(cors());
 app.use("/api/contacts", contactRoutes);
 app.use("/api/company", companyRoutes);
 app.use('/api/otherinfo', otherInfoRoutes);
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+
+app.get('/', function (req, res) {
+    res.send('Hey, I am Node.JS');
+  });
+  app.listen(process.env.PORT, function () {
+    console.log('Example app listening on port 3000!');
+  });
